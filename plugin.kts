@@ -1826,7 +1826,7 @@ registerAction(id = "Console log with random emoji", keyStroke = "ctrl shift L")
         val lastPart = fileNamePartsLength - 1;
         val extension = if (fileNameParts != null) fileNameParts[lastPart] else null;
         
-        val consoleLogString = if (extension == "tsx") "console.log('$randomEmoji', '');" else "Console.WriteLine(\"$randomEmoji \" + \"\");";
+        val consoleLogString = if (extension == "tsx" || extension == "ts" || extension == "js" || extension == "jsx") "console.log('$randomEmoji', '');" else "Console.WriteLine(\"$randomEmoji \" + \"\");";
         
         insertString(editor.caretModel.offset, consoleLogString);
         editor.caretModel.moveToOffset(editor.caretModel.offset + consoleLogString.length - 3);
