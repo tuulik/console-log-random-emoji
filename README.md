@@ -3,5 +3,6 @@ This is a short script for IntelliJ LivePlugin which inserts a console.log or Co
 Currently it inserts console.log for .js, .jsx, .ts and .tsx files and Console.WriteLine for others.
 
 LivePlugin: <https://github.com/dkandalov/live-plugin>
+Emojis from: <https://github.com/onmyway133/Smile/blob/master/Sources/Emoji.swift>
 
 I really liked a similar plugin for VSCode: <https://github.com/jamesformica/emoji-log> and wanted to use similar functionality in Rider.
