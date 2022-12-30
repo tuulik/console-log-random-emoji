@@ -1827,7 +1827,7 @@ registerAction(id = "Console log with random emoji", keyStroke = "ctrl shift L")
         val extension = if (fileNameParts != null) fileNameParts[lastPart] else null;
         
         val consoleLogString = when (extension) {
-            "tsx", "ts", "js", "jsx" -> "console.log('$randomEmoji', );"
+            "tsx", "ts", "js", "jsx", "cjs" -> "console.log('$randomEmoji', );"
             "kt", "kts" -> "println(\"$randomEmoji \" + )"
             else -> "Console.WriteLine(\"$randomEmoji \" + );"
         };
