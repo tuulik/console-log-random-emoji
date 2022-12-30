@@ -1829,11 +1829,17 @@ registerAction(id = "Console log with random emoji", keyStroke = "ctrl shift L")
         val consoleLogString = when (extension) {
             "tsx", "ts", "js", "jsx", "cjs" -> "console.log('$randomEmoji', );"
             "kt", "kts" -> "println(\"$randomEmoji \" + )"
-            else -> "Console.WriteLine(\"$randomEmoji \" + );"
+            else -> "Console.WriteLine(\"$randomEmoji \" + JsonSerializer.Serialize(\"\"));"
         };
         
+        val moveCaretCharacter = when(extension) {
+            "tsx", "ts", "js", "jsx", "cjs" -> ')'
+            "kt", "kts" -> ')'
+            else -> '"'
+        }
+
         insertString(editor.caretModel.offset, consoleLogString);
-        editor.caretModel.moveToOffset(editor.caretModel.offset + consoleLogString.indexOf(')'));
+        editor.caretModel.moveToOffset(editor.caretModel.offset + consoleLogString.lastIndexOf(moveCaretCharacter));
     }
 
 }
